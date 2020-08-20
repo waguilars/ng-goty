@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-horizontal-bar-chart',
@@ -13,24 +13,7 @@ import { Component, OnDestroy } from '@angular/core';
   ],
 })
 export class HorizontalBarChartComponent implements OnDestroy {
-  results = [
-    {
-      name: 'Juego 1',
-      value: 25,
-    },
-    {
-      name: 'Juego 2',
-      value: 15,
-    },
-    {
-      name: 'Juego 3 ',
-      value: 18,
-    },
-    {
-      name: 'Juego 4 ',
-      value: 28,
-    },
-  ];
+  @Input() results: any[];
 
   // options
   showXAxis = true;
@@ -47,16 +30,16 @@ export class HorizontalBarChartComponent implements OnDestroy {
   interval: any;
 
   constructor() {
-    this.interval = setInterval(() => {
-      console.log('object');
-      this.results = this.results.map((item) => {
-        item.value = Math.round(Math.random() * 100);
-        return item;
-      });
-    }, 2000);
+    // this.interval = setInterval(() => {
+    //   console.log('object');
+    //   this.results = this.results.map((item) => {
+    //     item.value = Math.round(Math.random() * 100);
+    //     return item;
+    //   });
+    // }, 2000);
   }
   ngOnDestroy(): void {
-    clearInterval(this.interval);
+    // clearInterval(this.interval);
   }
 
   onSelect(event: any): void {

@@ -1,1 +1,27 @@
-<p>goty works!</p>
+<h2>Vota por tu juego favorito</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <div class="card-columns">
+      <div class="bg-dark" *ngFor="let game of games">
+        <img
+          [src]="game.url"
+          class="card-img-top"
+          [alt]="game.name"
+          style="height: 120px;"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ game.name }}</h5>
+          <p class="card-text">Click aqui para votar por {{ game.name }}</p>
+          <button
+            class="btn btn-block btn-outline-primary"
+            (click)="vote(game)"
+          >
+            Votar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

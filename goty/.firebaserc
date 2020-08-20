@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-login-601e3": {
+      "hosting": {
+        "goty": [
+          "ng-login-601e3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-login-601e3"
+  }
+}
